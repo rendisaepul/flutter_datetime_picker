@@ -148,9 +148,14 @@ class DatePickerModel extends CommonPickerModel {
   }
 
   void _fillLeftLists() {
-    this.leftList = List.generate(maxTime.year - minTime.year + 1, (int index) {
-      // print('LEFT LIST... ${minTime.year + index}${_localeYear()}');
-      return '${minTime.year + index}${_localeYear()}';
+    // this.leftList = List.generate(maxTime.year - minTime.year + 1, (int index) {
+    //   // print('LEFT LIST... ${minTime.year + index}${_localeYear()}');
+    //   return '${minTime.year + index}${_localeYear()}';
+    // });
+    int maxDay = _maxDayOfCurrentMonth();
+    int minDay = _minDayOfCurrentMonth();
+    this.rightList = List.generate(maxDay - minDay + 1, (int index) {
+      return '${minDay + index}${_localeDay()}';
     });
   }
 
@@ -187,10 +192,14 @@ class DatePickerModel extends CommonPickerModel {
   }
 
   void _fillRightLists() {
-    int maxDay = _maxDayOfCurrentMonth();
-    int minDay = _minDayOfCurrentMonth();
-    this.rightList = List.generate(maxDay - minDay + 1, (int index) {
-      return '${minDay + index}${_localeDay()}';
+    // int maxDay = _maxDayOfCurrentMonth();
+    // int minDay = _minDayOfCurrentMonth();
+    // this.rightList = List.generate(maxDay - minDay + 1, (int index) {
+    //   return '${minDay + index}${_localeDay()}';
+    // });
+    this.leftList = List.generate(maxTime.year - minTime.year + 1, (int index) {
+      // print('LEFT LIST... ${minTime.year + index}${_localeYear()}');
+      return '${minTime.year + index}${_localeYear()}';
     });
   }
 
