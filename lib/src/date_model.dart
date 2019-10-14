@@ -306,8 +306,13 @@ class DatePickerModel extends CommonPickerModel {
 
   @override
   String leftStringAtIndex(int index) {
-    if (index >= 0 && index < leftList.length) {
-      return leftList[index];
+    // if (index >= 0 && index < leftList.length) {
+    //   return leftList[index];
+    // } else {
+    //   return null;
+    // }
+    if (index >= 0 && index < rightList.length) {
+      return rightList[index];
     } else {
       return null;
     }
@@ -324,8 +329,13 @@ class DatePickerModel extends CommonPickerModel {
 
   @override
   String rightStringAtIndex(int index) {
-    if (index >= 0 && index < rightList.length) {
-      return rightList[index];
+    // if (index >= 0 && index < rightList.length) {
+    //   return rightList[index];
+    // } else {
+    //   return null;
+    // }
+    if (index >= 0 && index < leftList.length) {
+      return leftList[index];
     } else {
       return null;
     }
